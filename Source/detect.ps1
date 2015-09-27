@@ -12,7 +12,7 @@ function Get-Installed-Framework-Versions()
     return $installedFrameworks
 }
 
-function Get-Framework-Versions-And-Hanle-Operation()
+function Get-Framework-Versions-And-Handle-Operation()
 {
     if ((Get-Framework40-Family-Version) -ge 1)
     {
@@ -55,6 +55,7 @@ function Get-Framework40-Family-Version()
     }
     else
     {
+		# .net 4 family do not installed in system
         $result = -1
     }
     
@@ -68,13 +69,13 @@ function Download-And-Install-Framework()
       # net 4.5.2 -> http://download.microsoft.com/download/E/2/1/E21644B5-2DF2-47C2-91BD-63C560427900/NDP452-KB2901907-x86-x64-AllOS-ENU.exe
       # net 4.6   -> http://download.microsoft.com/download/1/4/A/14A6C422-0D3C-4811-A31F-5EF91A83C368/NDP46-KB3045560-Web.exe => except win 10
       $url = "http://download.microsoft.com/download/1/4/A/14A6C422-0D3C-4811-A31F-5EF91A83C368/NDP46-KB3045560-Web.exe"
-      $output = "$PSScriptRoot\NDP46-KB3045560-Web.exe"
+      $output = "$PSScriptRoot\netFrameworkInstaller.exe"
       $start_time = Get-Date
        
       Invoke-WebRequest -Uri $url -OutFile $output  
       Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"  
       
-      Start-Process NDP46-KB3045560-Web.exe 
+      Start-Process netFrameworkInstaller.exe 
       # -NoNewWindow -Wait
 }
  
@@ -93,5 +94,9 @@ function Get-Framework-Value([string]$path, [string]$key)
 
 }
 
+# print all installed net frameworks
 Get-Installed-Framework-Versions
-Get-Framework-Versions-And-Hanle-Operation
+
+# in case .net framework family 4 is present in system, script start application otherwise 
+# download and install predefined framework
+Get-Framework-Versions-And-Handle-Operation
