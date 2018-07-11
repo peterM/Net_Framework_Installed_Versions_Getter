@@ -23,58 +23,58 @@ function Get-Framework-Versions-And-Handle-Operation() {
 function Get-Framework40-Family-Version() {
     $result = -1
     if (Is-Key-Present "HKLM:\Software\Microsoft\NET Framework Setup\NDP\v4\Client" "Install" -or Is-Key-Present "HKLM:\Software\Microsoft\NET Framework Setup\NDP\v4\Full" "Install") {
-        # net 4.0 is installed
+        # .net 4.0 is installed
         $result = 0
         $version = Get-Framework-Value "HKLM:\Software\Microsoft\NET Framework Setup\NDP\v4\Full" "Release"
         
         if ($version -ge 461808 -Or $version -ge 461814) {
-            # net 4.7.2
+            # .net 4.7.2
             Write-Host "Installed .Net Framework 4.7.2"
             $result = 9
         }
         elseif ($version -ge 461308 -Or $version -ge 461310) {
-            # net 4.7.1
+            # .net 4.7.1
             Write-Host "Installed .Net Framework 4.7.1"
             $result = 8
         }
         elseif ($version -ge 460798 -Or $version -ge 460805) {
-            # net 4.7
+            # .net 4.7
             Write-Host "Installed .Net Framework 4.7"
             $result = 7
         }
         elseif ($version -ge 394802 -Or $version -ge 394806) {
-            # net 4.6.2
+            # .net 4.6.2
             Write-Host "Installed .Net Framework 4.6.2"
             $result = 6
         }
         elseif ($version -ge 394254 -Or $version -ge 394271) {
-            # net 4.6.1
+            # .net 4.6.1
             Write-Host "Installed .Net Framework 4.6.1"
             $result = 5
         }
         elseif ($version -ge 393295 -Or $version -ge 393297) {
-            # net 4.6
+            # .net 4.6
             Write-Host "Installed .Net Framework 4.6"
             $result = 4
         }
         elseif ($version -ge 379893) {
-            # net 4.5.2
+            # .net 4.5.2
             Write-Host "Installed .Net Framework 4.5.2"
             $result = 3
         }
         elseif ($version -ge 378675) {
-            # net 4.5.1
+            # .net 4.5.1
             Write-Host "Installed .Net Framework 4.5.1"
             $result = 2
         }
         elseif ($version -ge 378389) {
-            # net 4.5
+            # .net 4.5
             Write-Host "Installed .Net Framework 4.5"
             $result = 1
         }   
     }
     else {
-        # .net 4 family do not installed in system
+        # .net framework 4 family isn't installed
         $result = -1
     }
     
@@ -109,7 +109,6 @@ function Get-Framework-Value([string]$path, [string]$key) {
     if (!(Test-Path $path)) { return "-1" }
     
     return (Get-ItemProperty $path).$key  
-
 }
 
 # print all installed net frameworks
