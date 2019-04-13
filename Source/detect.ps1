@@ -27,7 +27,13 @@ function Get-Framework40-Family-Version() {
         $result = 0
         $version = Get-Framework-Value "HKLM:\Software\Microsoft\NET Framework Setup\NDP\v4\Full" "Release"
         
-        if ($version -ge 461808 -Or $version -ge 461814) {
+        if($version -ge 528033) 
+        {
+            # .net 4.8 preview build
+            Write-Host "Installed .Net Framework 4.8 preview build 3745"
+            $result = 10
+        }
+        elseif ($version -ge 461808 -Or $version -ge 461814) {
             # .net 4.7.2
             Write-Host "Installed .Net Framework 4.7.2"
             $result = 9
