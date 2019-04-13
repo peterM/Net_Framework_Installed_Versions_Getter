@@ -29,7 +29,7 @@ function Get-Framework40-Family-Version() {
         
         if($version -ge 528033) 
         {
-            # .net 4.8 preview build
+            # .net 4.8 preview build 3745
             Write-Host "Installed .Net Framework 4.8 preview build 3745"
             $result = 10
         }
