@@ -56,58 +56,58 @@ function Get-Framework40-Family-Version() {
         {
             # .net 4.8 RTM (released 19.04.2019)
             Write-Host "=> Installed .Net Framework 4.8"
-            $result = 10
+            $result = 12
         }
         elseif($version -ge 528033) 
         {
             # .net 4.8 preview build 3745
             Write-Host "=> Installed .Net Framework 4.8 preview build 3745"
-            $result = 10
+            $result = 11
         }
         elseif ($version -ge 461808 -Or $version -ge 461814) {
             # .net 4.7.2
             Write-Host "=> Installed .Net Framework 4.7.2"
-            $result = 9
+            $result = 10
         }
         elseif ($version -ge 461308 -Or $version -ge 461310) {
             # .net 4.7.1
             Write-Host "=> Installed .Net Framework 4.7.1"
-            $result = 8
+            $result = 9
         }
         elseif ($version -ge 460798 -Or $version -ge 460805) {
             # .net 4.7
             Write-Host "=> Installed .Net Framework 4.7"
-            $result = 7
+            $result = 8
         }
         elseif ($version -ge 394802 -Or $version -ge 394806) {
             # .net 4.6.2
             Write-Host "=> Installed .Net Framework 4.6.2"
-            $result = 6
+            $result = 7
         }
         elseif ($version -ge 394254 -Or $version -ge 394271) {
             # .net 4.6.1
             Write-Host "=> Installed .Net Framework 4.6.1"
-            $result = 5
+            $result = 6
         }
         elseif ($version -ge 393295 -Or $version -ge 393297) {
             # .net 4.6
             Write-Host "=> Installed .Net Framework 4.6"
-            $result = 4
+            $result = 5
         }
         elseif ($version -ge 379893) {
             # .net 4.5.2
             Write-Host "=> Installed .Net Framework 4.5.2"
-            $result = 3
+            $result = 4
         }
         elseif ($version -ge 378675) {
             # .net 4.5.1
             Write-Host "=> Installed .Net Framework 4.5.1"
-            $result = 2
+            $result = 3
         }
         elseif ($version -ge 378389) {
             # .net 4.5
             Write-Host "=> Installed .Net Framework 4.5"
-            $result = 1
+            $result = 2
         }   
     }
     else {
@@ -250,7 +250,7 @@ function Download-And-Install-Framework($requestedVersion) {
         $url = "https://download.microsoft.com/download/6/E/4/6E48E8AB-DC00-419E-9704-06DD46E5F81D/NDP472-KB4054530-x86-x64-AllOS-ENU.exe"
         $suffix="_4_7_2"
     }
-    elseif ($requestedVersion -eq 11)
+    elseif ($requestedVersion -eq 12)
     {
         # .net framework 4.8
         # $url = "https://dotnet.microsoft.com/download/thank-you/net48-offline"
