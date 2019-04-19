@@ -39,18 +39,18 @@ You can use parapeters
 
 #### Versions
 
-| .net Framework version | parameter |
-|------------------------|-----------|
-| .net framework 3.5 sp1 |    ` 0`   |
-| .net framework 4.0     |    ` 1`   |
-| .net framework 4.5     |    ` 2`   |
-| .net framework 4.5.1   |    ` 3`   |
-| .net framework 4.5.2   |    ` 4`   |
-| .net framework 4.6     |    ` 5`   |
-| .net framework 4.6.1   |    ` 6`   |
-| .net framework 4.6.2   |    ` 7`   |
-| .net framework 4.7     |    ` 8`   |
-| .net framework 4.7.1   |    ` 9`   |
-| .net framework 4.7.2   |    `10`   |
-| .net framework 4.7.2   |    `11`   |
-| .net framework 4.8     |    `12`   |
+| .net Framework version       | parameter |
+|------------------------------|-----------|
+| .net framework 3.5 sp1       |    ` 0`   |
+| .net framework 4.0           |    ` 1`   |
+| .net framework 4.5           |    ` 2`   |
+| .net framework 4.5.1         |    ` 3`   |
+| .net framework 4.5.2         |    ` 4`   |
+| .net framework 4.6           |    ` 5`   |
+| .net framework 4.6.1         |    ` 6`   |
+| .net framework 4.6.2         |    ` 7`   |
+| .net framework 4.7           |    ` 8`   |
+| .net framework 4.7.1         |    ` 9`   |
+| .net framework 4.7.2         |    `10`   |
+| .net framework 4.8 preview   |    `11`   |
+| .net framework 4.8           |    `12`   |
