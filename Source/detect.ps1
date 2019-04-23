@@ -294,7 +294,7 @@ function Download-And-Install-Framework($requestedVersion) {
     Invoke-WebRequest -Uri $url -OutFile $output  
     Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"  
       
-    Start-Process netFrameworkInstaller.exe 
+    Start-Process $output 
     # -NoNewWindow -Wait
 }
  
