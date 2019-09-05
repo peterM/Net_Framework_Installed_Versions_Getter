@@ -83,6 +83,12 @@ function Get-Framework40-Family-Version() {
             Write-Host "=> Installed .Net Framework 4.8"
             $result = 12
         }
+        elseif($version -ge 528040) 
+        {
+            # .net 4.8 RTM (released 19.04.2019)
+            Write-Host "=> Installed .Net Framework 4.8"
+            $result = 12
+        }
         elseif($version -ge 528033) 
         {
             # .net 4.8 preview build 3745
